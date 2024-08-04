@@ -4,14 +4,12 @@
     box-sizing: border-box;
 }
 
-/* Body styles */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: #f5f5f7;
     color: #1d1d1f;
 }
 
-/* Navbar styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -25,12 +23,10 @@ body {
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* Logo styles */
 .logo {
     height: 40px;
 }
 
-/* Navbar icons styles */
 .navbar-icons {
     display: flex;
     align-items: center;
@@ -42,7 +38,6 @@ body {
     cursor: pointer;
 }
 
-/* Menu icon styles */
 .menu-icon {
     display: flex;
     flex-direction: column;
@@ -58,7 +53,6 @@ body {
     background-color: #000;
 }
 
-/* Dropdown menu styles */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -83,7 +77,6 @@ body {
     background-color: #f5f5f7;
 }
 
-/* Image gallery styles */
 .image-gallery {
     margin-top: 80px;
     display: flex;
@@ -103,7 +96,6 @@ body {
     display: block;
 }
 
-/* Styles for the text over images */
 .image-text {
     position: absolute;
     bottom: 100px;
@@ -124,7 +116,6 @@ body {
     height: auto;
 }
 
-/* Button container styles */
 .button-container {
     position: absolute;
     bottom: 20px;
@@ -134,7 +125,6 @@ body {
     gap: 10px;
 }
 
-/* Button styles */
 .button {
     padding: 10px 20px;
     background-color: #0071e3;
@@ -148,7 +138,6 @@ body {
     background-color: #005bb5;
 }
 
-/* Carousel styles */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -170,7 +159,6 @@ body {
     margin: 0 10px;
 }
 
-/* Carousel button styles */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -192,11 +180,15 @@ body {
     right: 10px;
 }
 
-/* Specific styles for the new section with zoom animation */
+/* Styles for the new section */
+.zoom-section {
+    margin: 40px 0; /* Adjust margin to create space above and below */
+}
+
 .zoom-wrapper {
     position: relative;
     width: 100%;
-    height: 400px; /* Set height as needed */
+    height: 400px; /* Adjust height as needed */
     overflow: hidden;
 }
 
@@ -204,7 +196,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure the images cover the container */
     top: 0;
     left: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -212,56 +204,39 @@ body {
 
 .top-image {
     z-index: 2;
-    animation: zoomInOut 8s ease-in-out infinite;
+    animation: zoomInOut 6s ease-in-out forwards;
 }
 
 .family-image {
     z-index: 1;
     opacity: 0;
-    animation: fadeInOut 8s ease-in-out infinite;
+    animation: fadeIn 6s 3s ease-in-out forwards;
 }
 
-/* Keyframes for zoom and fade animations */
 @keyframes zoomInOut {
     0% {
         transform: scale(1);
         opacity: 1;
     }
-    25% {
-        transform: scale(1.1);
-    }
     50% {
-        transform: scale(1);
-        opacity: 0;
-    }
-    75% {
-        transform: scale(1);
+        transform: scale(1.1);
         opacity: 1;
     }
     100% {
         transform: scale(1);
+        opacity: 0;
     }
 }
 
-@keyframes fadeInOut {
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 0;
-    }
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
-/* Styles for the new section text */
 .new-section .image-text {
     position: absolute;
     top: 50%;
@@ -271,11 +246,11 @@ body {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    text-shadow: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    z-index: 3; /* Ensure text is above images */
 }
 
 .new-section .sub-text {
@@ -291,4 +266,5 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 3; /* Ensure buttons are above images */
 }
