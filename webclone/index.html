@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple-style Navigation Bar with Dropdown Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="./image/logo.png" class="logo" alt="Logo">
+        <div class="navbar-icons">
+            <img src="./image/search.svg" alt="Search" class="search-icon">
+            <img src="./image/suitcase-svgrepo-com.svg" alt="Folder" class="folder-icon">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#store">Store</a>
+            <a href="#mac">Mac</a>
+            <a href="#ipad">iPad</a>
+            <a href="#iphone">iPhone</a>
+            <a href="#watch">Watch</a>
+            <a href="#vision">Vision</a>
+            <a href="#airpods">AirPods</a>
+            <a href="#tv-home">TV & Home</a>
+            <a href="#entertainment">Entertainment</a>
+            <a href="#accessories">Accessories</a>
+            <a href="#support">Support</a>
+        </div>
+    </div>
+
+    <div class="image-gallery">
+        <div class="image-wrapper">
+            <img src="./image/vision.jpg" alt="Vision Pro" class="main-image">
+            <div class="image-text">
+                <img src="./image/logo.png" alt="Apple Logo" class="apple-logo">
+                Vision Pro<br>The era of spatial computing is here.
+            </div>
+            <div class="button-container">
+                <a href="#" class="button">Learn More</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img src="./image/hero_iphone__djnssbp7lziq_medium_2x.jpg" alt="iPhone" class="main-image">
+            <div class="button-container">
+                <a href="#" class="button">Learn More</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img src="./image/ipad.jpeg" alt="iPad" class="main-image">
+            <div class="button-container">
+                <a href="#" class="button">Learn More</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img src="./image/apple watch.jpeg" alt="iPad" class="main-image">
+            <div class="button-container">
+                <a href="#" class="button">Learn More</a>
+                <a href="#" class="button">Buy</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="designed-for-family-wrapper">
+        <div class="designed-for-family-container">
+            <img src="./image/top family.jpeg" alt="Designed for Family Top" class="designed-for-family-top-image">
+            <img src="./image/family.jpeg" alt="Designed for Family" class="designed-for-family-image">
+            <div class="designed-for-family-text">
+                Designed for family<br>Built-in features for family life
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <img src="./image/movie1.jpeg" alt="Movie 1">
+            <img src="./image/movie2.jpeg" alt="Movie 2">
+            <img src="./image/movie3.jpeg" alt="Movie 3">
+            <img src="./image/movie4.jpeg" alt="Movie 4">
+        </div>
+        <button class="carousel-button left" id="scrollLeft">&#10094;</button>
+        <button class="carousel-button right" id="scrollRight">&#10095;</button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        document.getElementById('scrollLeft').addEventListener('click', function() {
+            document.getElementById('carousel').scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        document.getElementById('scrollRight').addEventListener('click', function() {
+            document.getElementById('carousel').scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        function autoScroll() {
+            document.getElementById('carousel').scrollBy({ left: 300, behavior: 'smooth' });
+        }
+
+        setInterval(autoScroll, 3000); // Scroll every 3 seconds
+    </script>
+
+</body>
+</html>
